@@ -1,0 +1,42 @@
+{
+  "name": "dnsmint-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for DNSMint: let an agent mint and manage its own hostnames.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "dnsmint-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "node --test dist/*.test.js",
+    "check": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "dns",
+    "dnsmint",
+    "hostname"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnsmint/dnsmint-mcp-server.git"
+  },
+  "homepage": "https://dnsmint.com",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
