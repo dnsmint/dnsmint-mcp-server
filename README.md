@@ -1,8 +1,32 @@
 # DNSMint MCP server
 
+> **Most people want the hosted endpoint instead: `https://dnsmint.com/mcp`.**
+>
+> It needs nothing installed. In Claude or ChatGPT, add the URL as a connector
+> and sign in. In Claude Code, Cursor or VS Code, point them at the URL with an
+> API key. On a server with no browser, use the device flow. The recipe for each
+> is on [dnsmint.com/integrations](https://dnsmint.com/integrations).
+>
+> This package is the same tools over stdio, for the case where you want the
+> server running as a local subprocess rather than talking to ours.
+
 Lets an agent mint and manage its own hostnames on [DNSMint](https://dnsmint.com), through the [Model Context Protocol](https://modelcontextprotocol.io).
 
 Every other DNSMint integration assumes a human wrote the config first. This one does not: an agent that has just been given a machine can ask for a name for it, mid-task.
+
+## Which one to use
+
+|  | Hosted `dnsmint.com/mcp` | This package |
+|---|---|---|
+| Install | nothing | Node, and an entry in a config file |
+| Claude / ChatGPT connectors | yes, via OAuth | no — they cannot spawn a subprocess |
+| Headless server | yes, via the device flow | yes |
+| Credential | API key, or an OAuth grant you can revoke from the dashboard | API key in the client's environment |
+| Tool updates | reach you immediately | when you upgrade the package |
+
+The hosted endpoint is the one that gets improvements first. Use this if you
+specifically want a local process — an air-gapped setup pointed at a private
+deployment, or a client that only speaks stdio.
 
 ## Configure
 
@@ -38,6 +62,9 @@ The key needs `hostnames:read` and `hostnames:write`. **Scope it to one domain**
 | `repoint_hostname` | The machine moved; the name does not. |
 | `diagnose_hostname` | Why a name is or is not working. |
 | `release_hostname` | Only when `DNSMINT_ALLOW_RELEASE=true`. See below. |
+
+The hosted endpoint carries the same six, and decides which to offer from what
+the credential was granted rather than from an environment variable.
 
 ## Releasing is off by default, on purpose
 
