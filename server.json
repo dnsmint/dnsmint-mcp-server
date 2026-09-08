@@ -9,5 +9,28 @@
       "type": "streamable-http",
       "url": "https://dnsmint.com/mcp"
     }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "dnsmint-mcp-server",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "DNSMINT_API_KEY",
+          "description": "A DNSMint API key. Create one at https://dnsmint.com/app/settings.",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "DNSMINT_ALLOW_RELEASE",
+          "description": "Set to true to expose release_hostname. Releasing is permanent and the name is never issued again, so it is off by default.",
+          "isRequired": false
+        }
+      ]
+    }
   ]
 }
