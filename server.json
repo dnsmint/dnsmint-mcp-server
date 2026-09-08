@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "com.dnsmint/dnsmint",
+  "name": "com.dnsmint/mcp",
   "title": "DNSMint",
-  "description": "Mint and manage hostnames on domains DNSMint operates, so an agent can name a machine mid-task without a zone of its own.",
+  "description": "Mint and manage hostnames on domains DNSMint operates, so an agent can name a machine mid-task.",
   "version": "1.0.0",
   "remotes": [
     {
@@ -14,7 +14,7 @@
     {
       "registryType": "npm",
       "identifier": "dnsmint-mcp-server",
-      "version": "0.1.0",
+      "version": "0.1.2",
       "transport": {
         "type": "stdio"
       },
