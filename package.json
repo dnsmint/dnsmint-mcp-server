@@ -1,7 +1,7 @@
 {
   "name": "dnsmint-mcp-server",
   "version": "0.1.2",
-  "description": "MCP server for DNSMint: let an agent mint and manage its own hostnames.",
+  "description": "Mint a secure HTTPS endpoint for your agents. Each on its own dedicated domain.",
   "mcpName": "com.dnsmint/mcp",
   "license": "MIT",
   "type": "module",
