@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.dnsmint/mcp",
   "title": "DNSMint",
-  "description": "Mint and manage hostnames on domains DNSMint operates, so an agent can name a machine mid-task.",
-  "version": "1.0.0",
+  "description": "Mint a secure HTTPS endpoint for your agents. Each on its own dedicated domain.",
+  "version": "1.0.1",
   "remotes": [
     {
       "type": "streamable-http",
